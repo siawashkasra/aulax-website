@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Colors */
+  --color-primary: #006a4e;
+  --color-accent: #90ee90;
+  --color-accent-light: rgba(144, 238, 144, 0.3);
+  --color-accent-cyan: #cffafe;
+  --color-accent-cyan-light: rgba(207, 250, 254, 0.3);
+  --color-accent-green-light: rgba(161, 255, 194, 0.2);
+
+  /* Text Colors */
+  --color-text-heading: #1e293b;
+  --color-text-body: #374151;
+  --color-text-muted: #4b5563;
+  --color-text-light: #6b7280;
+  --color-text-white: #ffffff;
+  --color-text-gray: #e5e7eb;
+  --color-text-stat: #d1d5db;
+  --color-text-dark-gray: #1f2937;
+
+  /* Background Colors */
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f9fafb;
+  --color-bg-dark: #1e293b;
+  --color-bg-black: #000000;
+
+  /* Border Colors */
+  --color-border: #e5e7eb;
+
+  /* Border Radius */
+  --radius-pill: 9999px;
+  --radius-card: 24px;
+  --radius-icon: 16px;
+  --radius-small: 8px;
+
+  /* Shadows */
+  --shadow-sm: 0px 10px 15px -3px rgba(0, 0, 0, 0.1), 0px 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  /* Responsive Spacing - Mobile first */
+  --px-container: 16px;
+  --px-inner: 16px;
+  --py-section: 48px;
+  --gap-xl: 64px;
+  --gap-lg: 32px;
+  --gap-md: 24px;
+  --gap-sm: 16px;
+  --gap-xs: 12px;
+  --gap-xxs: 8px;
+  --gap-tiny: 4px;
+}
+
+/* Tablet breakpoint (768px+) */
+@media (min-width: 768px) {
+  :root {
+    --px-container: 32px;
+    --px-inner: 24px;
+    --py-section: 64px;
+    --gap-xl: 80px;
+    --gap-lg: 48px;
+    --gap-md: 32px;
+    --gap-sm: 24px;
+    --gap-xs: 16px;
+    --gap-xxs: 12px;
+  }
+}
+
+/* Desktop breakpoint (1024px+) */
+@media (min-width: 1024px) {
+  :root {
+    --px-container: 64px;
+    --py-section: 80px;
+    --gap-xl: 96px;
+    --gap-lg: 64px;
+    --gap-md: 48px;
+    --gap-sm: 32px;
+    --gap-xs: 24px;
+    --gap-xxs: 16px;
+  }
+}
+
+/* Large desktop breakpoint (1280px+) */
+@media (min-width: 1280px) {
+  :root {
+    --px-container: 80px;
+    --py-section: 96px;
+    --gap-xl: 128px;
+  }
+}
+
+/* Extra large desktop (1440px+) */
+@media (min-width: 1440px) {
+  :root {
+    --px-container: 104px;
+  }
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-accent-cyan: var(--color-accent-cyan);
+  
+  --color-heading: var(--color-text-heading);
+  --color-body: var(--color-text-body);
+  --color-muted: var(--color-text-muted);
+  --color-light: var(--color-text-light);
+  
+  --color-bg-white: var(--color-bg-white);
+  --color-bg-light: var(--color-bg-light);
+  --color-bg-dark: var(--color-bg-dark);
+  
+  --color-border: var(--color-border);
+}
+
+/* Base styles */
+body {
+  background: var(--color-bg-white);
+  color: var(--color-text-body);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Reset link styles */
+a {
+  text-decoration: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal overflow */
+* {
+  box-sizing: border-box;
+}
+
+/* Utility classes for responsive containers */
+.container-responsive {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--px-container);
+  padding-right: var(--px-container);
+}
+
+.section-padding {
+  padding-top: var(--py-section);
+  padding-bottom: var(--py-section);
+}
+
+/* Responsive typography using clamp() */
+.text-hero {
+  font-size: clamp(2rem, 5vw + 1rem, 3.75rem);
+  line-height: 1;
+}
+
+.text-section-heading {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 3rem);
+  line-height: 1.1;
+}
+
+.text-card-heading {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, 1.875rem);
+  line-height: 1.2;
+}
+
+.text-body-lg {
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.125rem);
+  line-height: 1.6;
+}
+
+/* Minimum tap target size for accessibility */
+.tap-target {
+  min-height: 44px;
+  min-width: 44px;
+}
