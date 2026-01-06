@@ -61,7 +61,7 @@ export default function HeroSection() {
             <div className="mt-8 md:mt-12">
               <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/8] lg:h-[500px] lg:aspect-auto rounded-xl md:rounded-2xl overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
                 <Image
-                  src="/images/A vibrant, multicultural group of friends shopping at a bustling outdoor local market, smiling and interacting with vendors, cinematic style.png"
+                  src="/images/a-vibrant-multicultural-group-of-friends-shopping-at-a-bustling-outdoor-local-market-smiling-and-interacting-with-vendors-cinematic-style.png"
                   alt="A vibrant, multicultural group of friends shopping at a bustling outdoor local market"
                   fill
                   className="object-cover"
