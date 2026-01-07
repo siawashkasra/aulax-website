@@ -58,7 +58,7 @@ export default function HeroSection() {
             </div>
 
             {/* Hero Image Container - responsive height */}
-            <div className="mt-8 md:mt-12">
+            <div className="mt-8 md:mt-12 pb-12 md:pb-16 lg:pb-24">
               <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] md:aspect-[16/8] lg:h-[500px] lg:aspect-auto rounded-xl md:rounded-2xl overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
                 <Image
                   src="/images/a-vibrant-multicultural-group-of-friends-shopping-at-a-bustling-outdoor-local-market-smiling-and-interacting-with-vendors-cinematic-style.png"
@@ -109,15 +109,13 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Brand Logos Section - responsive */}
+            {/* Brand Logos Section - COMMENTED OUT
             <div className="mt-12 md:mt-16 pb-12 md:pb-16 lg:pb-24">
               <p className="text-center font-semibold text-xs md:text-sm leading-5 text-[#6b7280] uppercase tracking-wider mb-6 md:mb-8">
                 Trusted by leading UK businesses
               </p>
 
-              {/* Brand logos container - responsive grid */}
               <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 opacity-60 grayscale px-4">
-                {/* Tesco */}
                 <div className="flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/tesco.svg"
@@ -131,7 +129,6 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                {/* Sainsbury's */}
                 <div className="flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/sainsbury's.svg"
@@ -145,7 +142,6 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                {/* Waitrose - hidden on very small screens */}
                 <div className="hidden sm:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/waitrose.svg"
@@ -159,7 +155,6 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                {/* Co-op - hidden on mobile */}
                 <div className="hidden md:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/co-up.svg"
@@ -173,7 +168,6 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                {/* Morrisons - hidden on tablet and below */}
                 <div className="hidden lg:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/morrisons.svg"
@@ -187,7 +181,6 @@ export default function HeroSection() {
                   </span>
                 </div>
 
-                {/* Boots - hidden on tablet and below */}
                 <div className="hidden lg:flex items-center h-10 md:h-12">
                   <Image
                     src="/icons/SVG (6).svg"
@@ -202,6 +195,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+            */}
           </div>
         </div>
       </div>
