@@ -57,7 +57,7 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto">
         {/* Footer Links - Responsive Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-6 mb-12 md:mb-16">
-          {/* Company */}
+          {/* Company - COMMENTED OUT
           <div className="flex flex-col gap-4">
             <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Company
@@ -97,8 +97,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          */}
 
-          {/* Aulax Products */}
+          {/* Aulax Products - COMMENTED OUT
           <div className="flex flex-col gap-4">
             <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Aulax Products
@@ -138,8 +139,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          */}
 
-          {/* Resources */}
+          {/* Resources - COMMENTED OUT
           <div className="flex flex-col gap-4">
             <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Resources
@@ -179,6 +181,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          */}
 
           {/* Contact Us */}
           <div className="flex flex-col gap-4">
