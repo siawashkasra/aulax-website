@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Aulax - Connecting You to the Local Marketplace",
   description: "Explore your local market with excitement! Aulax makes it easy and fun to discover nearby shops and amazing deals at your favourite stores.",
+  icons: {
+    icon: "/App icon/Aulax-App icon.svg",
+  },
 };
 
 export default function RootLayout({
