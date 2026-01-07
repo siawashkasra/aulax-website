@@ -225,9 +225,15 @@ export default function PartnershipSection() {
               </div>
 
               {/* Submit Button */}
-              <button type="submit" className="w-full flex items-center justify-center gap-2 bg-[#1e293b] text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors min-h-[44px]">
-                <CalendarIcon />
-                I&apos;m Ready
+              <button 
+                type="submit" 
+                style={{ backgroundColor: '#000000' }}
+                className="w-full flex items-center justify-center gap-2 text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity min-h-[44px]"
+              >
+                <span className="text-white">
+                  <CalendarIcon />
+                </span>
+                <span className="text-white">I&apos;m Ready</span>
               </button>
 
               {/* Note */}

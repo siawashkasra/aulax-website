@@ -56,7 +56,7 @@ export default function Footer() {
     <footer className="bg-[#f9fafb] pt-12 md:pt-16 pb-8 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20">
       <div className="max-w-[1280px] mx-auto">
         {/* Footer Links - Responsive Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-6 mb-12 md:mb-16">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-start gap-8 md:gap-6 mb-12 md:mb-16">
           {/* Company - COMMENTED OUT
           <div className="flex flex-col gap-4">
             <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
@@ -208,7 +208,7 @@ export default function Footer() {
           </div>
 
           {/* Follow us */}
-          <div className="flex flex-col gap-4 col-span-2 sm:col-span-1">
+          <div className="flex flex-col gap-4 sm:ml-auto">
             <h4 className="font-semibold text-base leading-6 text-[#1f2937]">
               Follow us
             </h4>

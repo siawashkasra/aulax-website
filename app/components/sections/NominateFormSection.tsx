@@ -217,10 +217,13 @@ export default function NominateFormSection() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-[#1e293b] text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-[#334155] transition-colors flex items-center justify-center gap-2 min-h-[44px]"
+                style={{ backgroundColor: '#000000' }}
+                className="w-full text-white font-bold text-base md:text-lg leading-7 px-6 md:px-8 py-3 md:py-4 rounded-full shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:opacity-90 transition-opacity flex items-center justify-center gap-3 min-h-[44px]"
               >
-                <ArrowIcon />
-                <span>Nominate a Local Hero</span>
+                <span className="flex-shrink-0 flex items-center text-white">
+                  <ArrowIcon />
+                </span>
+                <span className="text-white">Nominate a Local Hero</span>
               </button>
 
               {/* Terms */}
