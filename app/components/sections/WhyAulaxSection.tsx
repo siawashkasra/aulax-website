@@ -258,12 +258,13 @@ export default function WhyAulaxSection() {
                 </div>
                 <div className="flex flex-col gap-2 items-center">
                   <span className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#90ee90] text-center">
-                    85%
+                    30%
                   </span>
                   <span className="font-normal text-sm md:text-base leading-6 text-[#d1d5db] text-center">
                     Waste Reduction
                   </span>
                 </div>
+                {/* Local Community Impact - COMMENTED OUT
                 <div className="flex flex-col gap-2 items-center">
                   <span className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight text-[#90ee90] text-center">
                     Local
@@ -272,6 +273,7 @@ export default function WhyAulaxSection() {
                     Community Impact
                   </span>
                 </div>
+                */}
               </div>
             </div>
           </div>
