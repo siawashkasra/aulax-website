@@ -8,7 +8,7 @@ import NominateFormSection from "./components/sections/NominateFormSection";
 import VideoShowcaseSection from "./components/sections/VideoShowcaseSection";
 import PartnershipSection from "./components/sections/PartnershipSection";
 import ForBusinessSection from "./components/sections/ForBusinessSection";
-import ConvenientShoppingSection from "./components/sections/ConvenientShoppingSection";
+// import ConvenientShoppingSection from "./components/sections/ConvenientShoppingSection";
 import AppShowcaseSection from "./components/sections/AppShowcaseSection";
 import TrustSection from "./components/sections/TrustSection";
 import BusinessReadySection from "./components/sections/BusinessReadySection";
@@ -27,7 +27,7 @@ export default function Home() {
         <NominateFormSection />
         <ForBusinessSection />
         <PartnershipSection />
-        <ConvenientShoppingSection />
+        {/* <ConvenientShoppingSection /> */}
         <AppShowcaseSection />
         <TrustSection />
         <BusinessReadySection />
