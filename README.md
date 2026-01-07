@@ -29,6 +29,46 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+## SEO Setup
+
+This website includes comprehensive SEO optimization:
+
+### Features
+- **Sitemap**: Automatically generated at `/sitemap.xml`
+- **Robots.txt**: Available at `/robots.txt`
+- **Structured Data**: JSON-LD schema for Organization, WebSite, and SoftwareApplication
+- **Open Graph Tags**: For better social media sharing
+- **Twitter Cards**: Optimized for Twitter sharing
+- **Meta Tags**: Comprehensive meta tags for search engines
+
+### Environment Variables
+
+Create a `.env.local` file with:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://aulax.app
+```
+
+Update this with your production domain URL.
+
+### SEO Configuration
+
+- **Sitemap**: Edit `app/sitemap.ts` to add more pages as your site grows
+- **Robots**: Edit `app/robots.ts` to customize crawling rules
+- **Metadata**: Update `app/layout.tsx` to customize SEO metadata
+- **Structured Data**: Modify the JSON-LD schemas in `app/layout.tsx` to match your business details
+
+### Verification Codes
+
+Add your search engine verification codes in `app/layout.tsx` under the `verification` object:
+- Google Search Console
+- Bing Webmaster Tools
+- Yandex Webmaster
+
+### Social Media Links
+
+Update the `sameAs` array in the Organization schema in `app/layout.tsx` with your social media profiles.
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
