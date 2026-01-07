@@ -88,11 +88,13 @@ export default function PartnershipSection() {
 
           {/* Heading */}
           <div className="max-w-[896px] text-center px-4">
-            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight text-[#1e293b]">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.15] text-[#1e293b] mb-4 md:mb-5">
               Hundreds of local businesses are already rewriting their success
-              stories with Aulax. Your chapter starts with a simple
-              conversation.
+              stories with Aulax.
             </h2>
+            <p className="font-normal text-base sm:text-lg md:text-xl lg:text-2xl leading-[1.6] text-[#4b5563] max-w-[700px] mx-auto tracking-tight">
+              Your chapter starts with a simple conversation.
+            </p>
           </div>
         </div>
 
