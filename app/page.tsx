@@ -10,7 +10,7 @@ import PartnershipSection from "./components/sections/PartnershipSection";
 import ForBusinessSection from "./components/sections/ForBusinessSection";
 // import ConvenientShoppingSection from "./components/sections/ConvenientShoppingSection";
 import AppShowcaseSection from "./components/sections/AppShowcaseSection";
-import TrustSection from "./components/sections/TrustSection";
+// import TrustSection from "./components/sections/TrustSection";
 import BusinessReadySection from "./components/sections/BusinessReadySection";
 import CTASection from "./components/sections/CTASection";
 
@@ -29,7 +29,7 @@ export default function Home() {
         <PartnershipSection />
         {/* <ConvenientShoppingSection /> */}
         <AppShowcaseSection />
-        <TrustSection />
+        {/* <TrustSection /> */}
         <BusinessReadySection />
         <CTASection />
       </main>
