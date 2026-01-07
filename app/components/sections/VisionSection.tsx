@@ -68,7 +68,7 @@ export default function VisionSection() {
                 100+
               </span>
               <span className="font-normal text-sm leading-5 text-[#4b5563]">
-                Local Businesses
+                Businesses
               </span>
             </div>
 
@@ -78,11 +78,11 @@ export default function VisionSection() {
                 150+
               </span>
               <span className="font-normal text-sm leading-5 text-[#4b5563]">
-                Active Shoppers
+                Users
               </span>
             </div>
 
-            {/* Stat 3 - Satisfaction Rate */}
+            {/* Stat 3 - Satisfaction Rate - COMMENTED OUT
             <div className="flex flex-col gap-1 min-w-[100px] sm:min-w-[140px]">
               <span className="font-bold text-2xl md:text-3xl leading-9 text-[#006a4e]">
                 99%
@@ -91,6 +91,7 @@ export default function VisionSection() {
                 Satisfaction Rate
               </span>
             </div>
+            */}
           </div>
         </div>
 
