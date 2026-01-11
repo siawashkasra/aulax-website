@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HeroSection from "./components/sections/HeroSection";
 import VisionSection from "./components/sections/VisionSection";
+import FeatureHeroTabs from "./components/FeatureHeroTabs/FeatureHeroTabs";
 import WhyAulaxSection from "./components/sections/WhyAulaxSection";
 import NominateSection from "./components/sections/NominateSection";
 import NominateFormSection from "./components/sections/NominateFormSection";
@@ -21,6 +22,7 @@ export default function Home() {
       <main className="pt-[72px]">
         <HeroSection />
         <VisionSection />
+        <FeatureHeroTabs />
         <WhyAulaxSection />
         <VideoShowcaseSection />
         <NominateSection />
