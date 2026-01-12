@@ -306,7 +306,7 @@ export default function FeatureHeroTabs() {
   const activeTab = tabs[activeIndex];
 
   return (
-    <section ref={sectionRef} className={styles.section}>
+    <section ref={sectionRef} className={`w-full ${styles.section}`}>
       {/* Background with crossfade */}
       <div 
         className={styles.background}
