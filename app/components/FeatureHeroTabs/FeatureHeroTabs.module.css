@@ -228,8 +228,9 @@
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
+  border-radius: 0.75rem;
   padding: clamp(0.625rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.75rem);
+  padding-bottom: calc(clamp(0.625rem, 2vw, 0.875rem) + 5px);
   font-size: clamp(0.75rem, 2vw, 0.875rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.7);
@@ -238,7 +239,6 @@
   backdrop-filter: blur(10px);
   overflow: hidden;
   outline: none;
-  padding-bottom: calc(clamp(0.625rem, 2vw, 0.875rem) + 3px);
 }
 
 .tab:hover {
@@ -256,6 +256,8 @@
   background: #ffffff;
   border-color: rgba(255, 255, 255, 0.3);
   color: #0b1220;
+  overflow: hidden;
+  padding-bottom: calc(clamp(0.625rem, 2vw, 0.875rem) + 2px);
 }
 
 .tabLabel {
@@ -266,7 +268,7 @@
 
 .track {
   position: absolute;
-  bottom: 0;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - clamp(2.5rem, 6vw, 3.5rem));
@@ -276,12 +278,12 @@
 }
 
 .tabActive .track {
-  background: transparent;
+  display: none;
 }
 
 .progress {
   position: absolute;
-  bottom: 0;
+  bottom: 5px;
   left: clamp(1.25rem, 3vw, 1.75rem);
   right: clamp(1.25rem, 3vw, 1.75rem);
   height: 2px;
