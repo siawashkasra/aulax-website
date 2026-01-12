@@ -158,8 +158,9 @@ export default function FeatureHeroTabs() {
   const [reducedMotion, setReducedMotion] = useState(false);
   const [prevBg, setPrevBg] = useState(null);
   const [isFading, setIsFading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const fadeTimeoutRef = useRef(null);
-  const animationInstanceRef = useRef(0);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     // Check reduced motion preference
@@ -174,9 +175,53 @@ export default function FeatureHeroTabs() {
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
-  const next = (instanceId) => {
-    // Only allow the current animation instance to advance
-    if (instanceId !== animationInstanceRef.current || reducedMotion) return;
+  useEffect(() => {
+    // Intersection Observer to detect when section is visible
+    if (!sectionRef.current) return;
+
+    const checkInitialVisibility = () => {
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const threshold = windowHeight * 0.3;
+      const isInView = rect.top < windowHeight - threshold && rect.bottom > threshold;
+      
+      if (isInView) {
+        setIsVisible(true);
+        // Reset the animation when section is initially visible
+        setResetKey((prev) => prev + 1);
+      }
+    };
+
+    // Check initial visibility immediately (use setTimeout to ensure DOM is ready)
+    setTimeout(checkInitialVisibility, 0);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(entry.isIntersecting);
+          if (entry.isIntersecting) {
+            // Reset the animation when section becomes visible
+            setResetKey((prev) => prev + 1);
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+      }
+    );
+
+    observer.observe(sectionRef.current);
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  const next = () => {
+    // Don't advance if reduced motion or not visible
+    if (reducedMotion || !isVisible) return;
     
     setActiveIndex((prev) => {
       const nextIndex = (prev + 1) % tabs.length;
@@ -197,19 +242,11 @@ export default function FeatureHeroTabs() {
       return nextIndex;
     });
     
-    setResetKey((prev) => {
-      const newKey = prev + 1;
-      animationInstanceRef.current = newKey;
-      return newKey;
-    });
+    setResetKey((prev) => prev + 1);
   };
 
   const handleTabClick = (index) => {
     if (index === activeIndex) return;
-    
-    // Increment animation instance to invalidate any pending animations
-    const newKey = resetKey + 1;
-    animationInstanceRef.current = newKey;
     
     // Background crossfade
     setPrevBg(tabs[activeIndex].bg);
@@ -225,7 +262,7 @@ export default function FeatureHeroTabs() {
     }, 300);
     
     setActiveIndex(index);
-    setResetKey(newKey);
+    setResetKey((prev) => prev + 1);
   };
 
   const handleKeyDown = (e, index) => {
@@ -246,7 +283,7 @@ export default function FeatureHeroTabs() {
   const activeTab = tabs[activeIndex];
 
   return (
-    <section className={styles.section}>
+    <section ref={sectionRef} className={styles.section}>
       {/* Background with crossfade */}
       <div 
         className={styles.background}
@@ -323,11 +360,11 @@ export default function FeatureHeroTabs() {
                   {/* Track */}
                   <div className={styles.track} />
                   {/* Progress Bar */}
-                  {!reducedMotion && isActive && (
+                  {!reducedMotion && isActive && isVisible && (
                     <div
                       key={`${activeIndex}-${resetKey}`}
                       className={styles.progress}
-                      onAnimationEnd={() => next(resetKey)}
+                      onAnimationEnd={next}
                     />
                   )}
                 </button>
