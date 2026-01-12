@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import HeroSection from "./components/sections/HeroSection";
 import VisionSection from "./components/sections/VisionSection";
 import FeatureHeroTabs from "./components/FeatureHeroTabs/FeatureHeroTabs";
-import WhyAulaxSection from "./components/sections/WhyAulaxSection";
+// import WhyAulaxSection from "./components/sections/WhyAulaxSection";
 import NominateSection from "./components/sections/NominateSection";
 import NominateFormSection from "./components/sections/NominateFormSection";
 import VideoShowcaseSection from "./components/sections/VideoShowcaseSection";
@@ -23,7 +23,7 @@ export default function Home() {
         <HeroSection />
         <VisionSection />
         <FeatureHeroTabs />
-        <WhyAulaxSection />
+        {/* <WhyAulaxSection /> */}
         <VideoShowcaseSection />
         <NominateSection />
         <NominateFormSection />
