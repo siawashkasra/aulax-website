@@ -27,17 +27,17 @@ const GooglePlayIcon = () => (
 export default function VideoShowcaseSection() {
   return (
     <section
-      className="px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24 relative overflow-hidden"
+      className="w-full px-4 sm:px-6 md:px-8 lg:px-16 xl:px-20 py-12 md:py-16 lg:py-24 relative overflow-hidden"
       style={{
         backgroundImage:
           "linear-gradient(143deg, rgba(30, 41, 59, 1) 0%, rgba(17, 24, 39, 1) 100%)",
       }}
     >
       {/* Decorative blur circles - smaller on mobile */}
-      <div className="absolute top-[-96px] md:top-[-192px] left-[-96px] md:left-[-192px] w-48 md:w-96 h-48 md:h-96 rounded-full bg-[rgba(144,238,144,0.1)] blur-[32px]" />
+      <div className="absolute top-12 md:top-12 left-[-96px] md:left-[-192px] w-48 md:w-96 h-48 md:h-96 rounded-full bg-[rgba(144,238,144,0.1)] blur-[32px]" />
       <div className="absolute bottom-[-96px] md:bottom-[-192px] right-[-96px] md:right-[-192px] w-48 md:w-96 h-48 md:h-96 rounded-full bg-[rgba(207,250,254,0.1)] blur-[32px]" />
 
-      <div className="max-w-[1280px] mx-auto relative z-10">
+      <div className="max-w-[1280px] mx-auto relative">
         {/* Header */}
         <div className="flex flex-col gap-4 items-center mb-8 md:mb-12">
           <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl leading-tight text-white text-center">
