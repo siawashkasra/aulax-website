@@ -159,8 +159,11 @@ export default function FeatureHeroTabs() {
   const [prevBg, setPrevBg] = useState(null);
   const [isFading, setIsFading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [clickedTabIndex, setClickedTabIndex] = useState(null);
   const fadeTimeoutRef = useRef(null);
   const sectionRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     // Check reduced motion preference
@@ -220,8 +223,8 @@ export default function FeatureHeroTabs() {
   }, []);
 
   const next = () => {
-    // Don't advance if reduced motion or not visible
-    if (reducedMotion || !isVisible) return;
+    // Don't advance if reduced motion, not visible, or paused
+    if (reducedMotion || !isVisible || isPaused) return;
     
     setActiveIndex((prev) => {
       const nextIndex = (prev + 1) % tabs.length;
@@ -245,7 +248,17 @@ export default function FeatureHeroTabs() {
     setResetKey((prev) => prev + 1);
   };
 
-  const handleTabClick = (index) => {
+  const handleTabClick = (index, e) => {
+    if (e) {
+      e.stopPropagation(); // Prevent event from bubbling to container
+    }
+    
+    // Set clicked tab to show white background persistently
+    setClickedTabIndex(index);
+    
+    // Pause the progress bar
+    setIsPaused(true);
+    
     if (index === activeIndex) return;
     
     // Background crossfade
@@ -265,18 +278,28 @@ export default function FeatureHeroTabs() {
     setResetKey((prev) => prev + 1);
   };
 
+  const handleContainerClick = () => {
+    // Resume the progress bar when clicking outside tabs
+    if (isPaused) {
+      setIsPaused(false);
+      setResetKey((prev) => prev + 1); // Restart the progress bar
+      // Remove white background from clicked tab since progress resumes
+      setClickedTabIndex(null);
+    }
+  };
+
   const handleKeyDown = (e, index) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      handleTabClick(index);
+      handleTabClick(index, e);
     } else if (e.key === 'ArrowLeft') {
       e.preventDefault();
       const prevIndex = (activeIndex - 1 + tabs.length) % tabs.length;
-      handleTabClick(prevIndex);
+      handleTabClick(prevIndex, e);
     } else if (e.key === 'ArrowRight') {
       e.preventDefault();
       const nextIndex = (activeIndex + 1) % tabs.length;
-      handleTabClick(nextIndex);
+      handleTabClick(nextIndex, e);
     }
   };
 
@@ -296,7 +319,7 @@ export default function FeatureHeroTabs() {
         />
       )}
 
-      <div className={styles.container}>
+      <div ref={containerRef} className={styles.container} onClick={handleContainerClick}>
         {/* Top/Middle Content */}
         <div className={styles.content}>
           {/* Pill Badge */}
@@ -341,6 +364,7 @@ export default function FeatureHeroTabs() {
           className={styles.tabList}
           role="tablist"
           aria-label="Feature tabs"
+          onClick={(e) => e.stopPropagation()}
         >
           {tabs.map((tab, index) => {
             const isActive = index === activeIndex;
@@ -351,8 +375,8 @@ export default function FeatureHeroTabs() {
                   aria-selected={isActive}
                   aria-controls={`panel-${tab.id}`}
                   id={`tab-${tab.id}`}
-                  className={`${styles.tab} ${isActive ? styles.tabActive : ''}`}
-                  onClick={() => handleTabClick(index)}
+                  className={`${styles.tab} ${isActive ? styles.tabActive : ''} ${clickedTabIndex === index ? styles.tabClicked : ''}`}
+                  onClick={(e) => handleTabClick(index, e)}
                   onKeyDown={(e) => handleKeyDown(e, index)}
                   tabIndex={isActive ? 0 : -1}
                 >
@@ -360,7 +384,7 @@ export default function FeatureHeroTabs() {
                   {/* Track */}
                   <div className={styles.track} />
                   {/* Progress Bar */}
-                  {!reducedMotion && isActive && isVisible && (
+                  {!reducedMotion && isActive && isVisible && !isPaused && (
                     <div
                       key={`${activeIndex}-${resetKey}`}
                       className={styles.progress}
